@@ -1,0 +1,110 @@
+{
+  "type": "mysql",
+  "connection": {
+    "host": "localhost",
+    "user": "local",
+    "password": "emre1907",
+    "database": "anchormann"
+  },
+  "direct": true,
+  "schema": {
+    "tables": {
+      "begeniler": {
+        "db": {
+          "engine": "MyISAM",
+          "schema": "anchormann",
+          "collation": "utf8mb4_turkish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "kul_id": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "haber_id": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          }
+        }
+      },
+      "haberler": {
+        "db": {
+          "engine": "MyISAM",
+          "schema": "anchormann",
+          "collation": "utf8mb4_turkish_ci",
+          "comment": ""
+        },
+        "columns": {
+          "haber_id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "kul_id": {
+            "db": {
+              "type": "integer",
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "baslik": {
+            "db": {
+              "type": "text",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "aciklama": {
+            "db": {
+              "type": "text",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "resim_link": {
+            "db": {
+              "type": "text",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "haber_link": {
+            "db": {
+              "type": "text",
+              "maxLength": 65535,
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          },
+          "olusturulma_tarihi": {
+            "db": {
+              "type": "date",
+              "primary": false,
+              "comment": "",
+              "nullable": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

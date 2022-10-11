@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Untitled Document</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+	<link rel="stylesheet" href="Framework7/5/css/framework7.bundle.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Raleway:wght@100&display=swap" rel="stylesheet">
+	<script src="cordova.js"></script>
+	<script src="Framework7/5/js/framework7.bundle.min.js"></script>
+	<script src="js/routes.js"></script>
+	<script src="dmxAppConnect/dmxFramework7/dmxFramework7.js" defer=""></script>
+	<link rel="stylesheet" href="dmxFramework7_icons/css/framework7-icons.css" />
+	<link rel="stylesheet" href="css/bootstrap-icons.css" />
+	<link rel="stylesheet" href="dmxAppConnect/dmxPreloader/dmxPreloader.css" />
+	<script src="dmxAppConnect/dmxPreloader/dmxPreloader.js" defer=""></script>
+	<link rel="stylesheet" href="fontawesome5/css/all.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="dmxAppConnect/dmxTyped/dmxTyped.js" defer=""></script>
+	<script src="dmxAppConnect/dmxTyped/typed.min.js" defer=""></script>
+	<link rel="stylesheet" href="dmxAppConnect/dmxSlideshow/dmxSlideshow.css" />
+	<script src="dmxAppConnect/dmxSlideshow/dmxSlideshow.js" defer=""></script>
+	<link rel="stylesheet" href="dmxAppConnect/dmxSlideshow/themes/default.css" />
+	<link rel="stylesheet" href="../dmxAppConnect/dmxSlideshow/themes/light.css" />
+	<link rel="stylesheet" href="../dmxAppConnect/dmxSlideshow/themes/dark.css" />
+	<link rel="stylesheet" href="../dmxAppConnect/dmxSlideshow/themes/material.css" />
+	<script src="dmxAppConnect/dmxSwiper/dmxSwiper.js" defer=""></script>
+	<script src="dmxAppConnect/dmxSwiper/swiper.min.js" defer=""></script>
+	<link rel="stylesheet" href="dmxAppConnect/dmxSwiper/themes/default.css" />
+	<link rel="stylesheet" href="dmxAppConnect/dmxAnimateCSS/animate.min.css" />
+	<script src="dmxAppConnect/dmxAnimateCSS/dmxAnimateCSS.js" defer=""></script>
+
+	<script src="dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+	<script src="dmxAppConnect/dmxBrowser/dmxBrowser.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="index">
+	<div is="dmx-browser" id="browser1"></div>
+	<dmx-serverconnect id="serverconnect1" url="http://127.0.0.1/anchormann-data/dmxConnect/api/haberler.php" site="anchormann-data"></dmx-serverconnect>
+
+	<div id="app" is="dmx-f7-app" auto-dark-theme="true">
+		<div class="views">
+			<div id="logged_main" class="view">
+				<div id="indexpage1" class="page" data-name="index">
+					<div class="login-screen" id="login2">
+						<div id="login1_page1" data-name="login1_page" class="page login-screen-page">
+							<div class="page-content login-screen-content login">
+								<div class="login-screen-title">Giriş Yap</div>
+								<form is="dmx-serverconnect-form" method="post" id="girisForm1" action="http://127.0.0.1/anchormann-data/dmxConnect/api/uyelik/login.php" site="anchormann-data" dmx-on:success="app.alert('giriş başarılı')">
+									<div class="list">
+										<ul>
+											<li class="item-content item-input">
+												<div class="item-inner">
+													<div class="item-title item-label">Kullanıcı Adı</div>
+													<div class="item-input">
+														<input type="text" name="kul_adi1" placeholder="Kullanıcı Adı">
+													</div>
+												</div>
+											</li>
+											<li class="item-content item-input">
+												<div class="item-inner">
+													<div class="item-title item-label">Şifre</div>
+													<div class="item-input">
+														<input type="password" name="sifre1" placeholder="Şifre">
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="list">
+										<ul>
+
+											<li class="text-color-green"><a href="#" class="item-link list-button">Giriş Yap</a></li>
+											<li class="text-color-red">
+												<a href="#" class="item-link list-button text-color-red">Kayıt Ol</a>
+											</li>
+										</ul>
+										<div class="block-footer">
+
+
+											<p>Şifrenizi mi unuttunuz?</p>
+											<a href="#" class="button button-small">Şifre sıfırla</a>
+											<p><a href="#" class="login-screen-close">Giriş ekranını kapat</a></p>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- Top Navbar -->
+					<div class="navbar">
+						<div class="navbar-bg"></div>
+						<div class="navbar-inner">
+							<div class="left">
+								<a href="#" class="link text-color-red">
+									<i class="fas fa-video fa-lg"></i>
+								</a>
+							</div>
+							<div class="title brand-title">Anchormann</div>
+							<div class="right mesaj-icon">
+								<a href="#" class="link text-color-white">
+									<i class="far fa-comment fa-lg"></i></a>
+							</div>
+
+
+						</div>
+					</div>
+
+					<!-- Toolbar -->
+					<div class="toolbar toolbar-bottom no-border tabbar">
+						<div class="toolbar-inner">
+							<a href="#" class="link link-baslik android">Anasayfa
+								<i class="fas fa-align-center fa-2x"></i></a>
+							<a class="link link-baslik android" href="/search" dmx-on:click="">Keşfet<i class="fa fa-search fa-2x"></i></a>
+							<a href="/trends" class="link text-color-red link-baslik android">Son Dakika
+								<i class="fa fa-fire fa-2x"></i></a>
+							<a href="#" class="link link-baslik android">
+								<i class="fas fa-city fa-2x"></i></a>
+							<a href="#" class="link link-baslik android login-screen-open" data-login-screen="#login1">
+								<i class="fas fa-newspaper fa-2x"></i></a>
+						</div>
+					</div>
+
+					<!-- Scrollable page content -->
+					<div class="page-content wappler-block">
+
+						<div class="row">
+							<div class="col-auto text-align-center col">
+
+								<h2 class="ust-kayan-yazi"><span is="dmx-typed" strings="Bugün neler oldu?,Kendi açından değerlendir,Gazetende yayınla." speed="70" delay="100" loop="" back-speed="20"></span>
+								</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">
+
+								<div class="card card-expandable" dmx-animate-enter="fadeIn" data-backdrop="false" dmx-repeat:repeat1="serverconnect1.data.haberCekQuery">
+									<div class="card-content">
+
+
+										<div class="card-background-image" height="300px">
+											<img src="" alt="" dmx-bind:src="resim_link" height="300" width="">
+											<div class="card-header">{{baslik}}</div>
+
+											<a href="#" class="link card-close card-opened-fade-in color-black" style="position: absolute; right: 15px; top: 15px">
+												<i class="icon f7-icons">xmark_circle_fill</i>
+											</a>
+										</div>
+										<div class="card-content-padding">
+											<div class="card-footer no-border">
+												<img class="wappler-type-user user-pic" width="34" height="34" dmx-bind:src="'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg'"><a href="#"
+													class="link text-color-red">
+													<i class="far fa-heart fa-2x fa-fw" dmx-on:click=""></i>958</a>
+												<a href="#" class="link text-color-yellow">
+													<i class="fas fa-hand-holding-usd fa-2x fa-fw"></i>35.75</a>
+												<a href="#" class="link text-color-teal">2.7k
+													<i class="fas fa-share-alt fa-2x fa-fw"></i></a>
+											</div>
+											<div class="card-content-inner">
+												<p dmx-text="'Haber tarihi: '+olusturulma_tarihi.formatDate('d.MM.yyyy')"></p>
+											</div>
+											<p>{{aciklama}}</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+					</div>
+				</div>
+			</div>
+			<div id="main" class="view view-main">
+				<!-- Initial Page, "data-name" contains page name -->
+				<div id="indexpage" class="page" data-name="index">
+					<div class="login-screen" id="login1">
+						<div id="login1_page" data-name="login1_page" class="page login-screen-page">
+							<div class="page-content login-screen-content login">
+								<div class="login-screen-title">Giriş Yap</div>
+								<form is="dmx-serverconnect-form" method="post" id="girisForm" action="http://127.0.0.1/anchormann-data/dmxConnect/api/uyelik/login.php" site="anchormann-data" dmx-on:success="app.alert('giriş başarılı')">
+									<div class="list">
+										<ul>
+											<li class="item-content item-input">
+												<div class="item-inner">
+													<div class="item-title item-label">Kullanıcı Adı</div>
+													<div class="item-input">
+														<input type="text" name="kul_adi" placeholder="Kullanıcı Adı">
+													</div>
+												</div>
+											</li>
+											<li class="item-content item-input">
+												<div class="item-inner">
+													<div class="item-title item-label">Şifre</div>
+													<div class="item-input">
+														<input type="password" name="sifre" placeholder="Şifre">
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="list">
+										<ul>
+
+											<li class="text-color-green"><a href="#" class="item-link list-button">Giriş Yap</a></li>
+											<li class="text-color-red" dmx-on:click="browser1.goto('/register')"><a class="item-link list-button text-color-red">Kayıt Ol</a></li>
+
+
+										</ul>
+										<div class="block-footer">
+
+
+											<p>Şifrenizi mi unuttunuz?</p>
+											<a href="#" class="button button-small">Şifre sıfırla</a>
+											<p><a href="#" class="login-screen-close">Giriş ekranını kapat</a></p>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- Top Navbar -->
+					<div class="navbar">
+						<div class="navbar-bg"></div>
+						<div class="navbar-inner">
+							<div class="left">
+								<a href="#" class="link text-color-red">
+									<i class="fas fa-video fa-lg"></i>
+								</a>
+							</div>
+							<div class="title brand-title">Anchormann</div>
+							<div class="right mesaj-icon">
+								<a href="#" class="link text-color-white">
+									<i class="far fa-comment fa-lg"></i></a>
+							</div>
+
+
+						</div>
+					</div>
+
+					<!-- Toolbar -->
+					<div class="toolbar toolbar-bottom no-border tabbar">
+						<div class="toolbar-inner">
+							<a href="#" class="link link-baslik android">Anasayfa
+								<i class="fas fa-align-center fa-2x"></i></a>
+							<a class="link link-baslik android" href="/search" dmx-on:click="app.f7view.navigate('/search',{transition: 'f7-parallax'})">Keşfet<i class="fa fa-search fa-2x"></i></a>
+							<a href="/trends" class="link text-color-red link-baslik android">Son Dakika
+								<i class="fa fa-fire fa-2x"></i></a>
+							<a href="#" class="link link-baslik android">
+								<i class="fas fa-city fa-2x"></i></a>
+							<a href="#" class="link link-baslik android login-screen-open" data-login-screen="#login1">
+								<i class="fas fa-newspaper fa-2x"></i></a>
+						</div>
+					</div>
+
+					<!-- Scrollable page content -->
+					<div class="page-content wappler-block">
+
+						<div class="row">
+							<div class="col-auto text-align-center col">
+
+								<h2 class="ust-kayan-yazi"><span is="dmx-typed" strings="Bugün neler oldu?,Kendi açından değerlendir,Gazetende yayınla." speed="70" delay="100" loop back-speed="20"></span>
+								</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-auto">
+
+								<div class="card card-expandable" dmx-animate-enter="fadeIn" data-backdrop="false" dmx-repeat:repeat1="serverconnect1.data.haberCekQuery">
+									<div class="card-content">
+
+
+										<div class="card-background-image" height="300px">
+											<img src="" alt="" dmx-bind:src="resim_link" height="300" width="">
+											<div class="card-header">{{baslik}}</div>
+
+											<a href="#" class="link card-close card-opened-fade-in color-black" style="position: absolute; right: 15px; top: 15px">
+												<i class="icon f7-icons">xmark_circle_fill</i>
+											</a>
+										</div>
+										<div class="card-content-padding">
+											<div class="card-footer no-border">
+												<img class="wappler-type-user user-pic" width="34" height="34" dmx-bind:src="'https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg'"><a href="#"
+													class="link text-color-red">
+													<i class="far fa-heart fa-2x fa-fw" dmx-on:click=""></i>958</a>
+												<a href="#" class="link text-color-yellow">
+													<i class="fas fa-hand-holding-usd fa-2x fa-fw"></i>35.75</a>
+												<a href="#" class="link text-color-teal">2.7k
+													<i class="fas fa-share-alt fa-2x fa-fw"></i></a>
+											</div>
+											<div class="card-content-inner">
+												<p dmx-text="'Haber tarihi: '+olusturulma_tarihi.formatDate('d.MM.yyyy')"></p>
+											</div>
+											<p>{{aciklama}}</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Statusbar overlay -->
+		<div class="statusbar"></div>
+
+		<!-- Your main view, should have "view-main" class -->
+
+	</div>
+</body>
+
+</html>

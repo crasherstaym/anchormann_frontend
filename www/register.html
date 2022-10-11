@@ -1,0 +1,67 @@
+<!-- Wappler include head-page="index.html" is="dmx-app" id="register" appConnect="local" framework7_5="With App Connect" framework7_icons="local" cordova="local" -->
+
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="#" class="link back"><i class="icon icon-back"></i>Back
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page-content wappler-block register">
+    <div class="block-title block-title-large">Kayıt Ol</div>
+    <div class="block-header">Kayıt olarak yepyeni bir habercilik deneyimine göz atın!</div>
+    <form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="http://127.0.0.1/anchormann-data/dmxConnect/api/uyelik/register.php" site="anchormann-data" dmx-on:success="app.alert('Kayıt başarılı.')">
+      <div class="list">
+        <ul>
+
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Kullanıcı Adı</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="kul_adi">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Şifre</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="sifre">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">E-Mail</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="email">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Telefon</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="tel">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="text-color-white bg-color-green">
+            <a href="#" class="item-link list-button">Kayıt Ol</a>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
